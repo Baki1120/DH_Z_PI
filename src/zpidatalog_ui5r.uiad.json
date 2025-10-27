@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Principal Investigator Log",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Principal Investigator Log"
+  },
+  "ui5AppDetails": {
+    "appId": "principalinvestigatorlog"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_71AC67D3609CA9DC1170C8612C84D9CD693A455D_TM",
+    "semanticObject": "ZPIDATALOG",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_71AC67D3609CA9DC1170C8612C84D9CD693A455D_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Principal Investigator Log",
+        "subtitle": "Principal Investigator Log"
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TB_PI_CC_LOG'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_PICODE_UPL'
+  }
+}
+define service ZUI_TB_PI_UPL_N
+  provider contracts odata_v4_ui {
+  expose ZC_PICODE_UPL as File;
+}

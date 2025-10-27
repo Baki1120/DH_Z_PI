@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TB_PICODE_CUR'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TB_PICODE_CUR'
+  }
+}
+define service ZUI_TB_PICODE_CUR_O4 provider contracts odata_v4_ui {
+  expose ZC_TB_PICODE_CUR as PiCodesCurrently;
+}

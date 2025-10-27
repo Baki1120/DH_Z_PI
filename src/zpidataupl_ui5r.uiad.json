@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Upload Principal Investigator",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Upload Principal Investigator"
+  },
+  "ui5AppDetails": {
+    "appId": "principalinvestigatorupload"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_0C2A6EDC3B886AE28B56DB7BFD99569D004AD1AE_TM",
+    "semanticObject": "ZPIDATAUPL",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_0C2A6EDC3B886AE28B56DB7BFD99569D004AD1AE_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Upload Principal Investigator",
+        "subtitle": "Upload Excel"
+      }
+    }
+  ]
+}

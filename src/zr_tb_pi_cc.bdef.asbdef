@@ -1,0 +1,87 @@
+managed implementation in class ZCL_R_TB_PI_CC unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_TB_PI_CC alias PrincipalInvestigator
+persistent table ztb_pi_cc
+draft table ztb_pi_cc_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+with additional save
+
+{
+  field ( readonly )
+  Uuid,
+  PiCode,
+  CreatedByUser,
+  CreatedBy,
+  CreatedAt,
+  LocalLastChangedBy,
+  LocalLastChangedAt,
+  LastChangedAt;
+
+  field ( numbering : managed )
+  Uuid;
+
+  //  field ( mandatory ) PiFirstName, PiLastName;
+
+  field ( features : instance ) PiFirstName,
+  PiLastName, RcuhPiUid, Notes;
+
+  side effects { field Active affects $self; }
+
+  validation validateRcuhPiUid on save { create; update; field RCUHProject; }
+  validation validateConnection on save { create; update; }
+  determination genPiCode on save { create; }
+  validation checkgenPiCode on save { create; }
+  determination upperCaseText on save { create; }
+  determination setActive on modify { create; }
+
+  determine action trigger_my_logic
+  {
+
+    determination genPiCode;
+    validation validateRcuhPiUid;
+    validation checkgenPiCode;
+    validation validateConnection;
+
+  }
+
+  static action apiCreatePICodes deep parameter ZA_PI_REQ result [1..*] ZA_PI_RES;
+
+  create;
+  update;
+  delete ( features : instance );
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare
+  {
+    validation validateRcuhPiUid;
+    validation validateConnection;
+  }
+
+  mapping for ztb_pi_cc corresponding
+    {
+      Uuid               = uuid;
+      PiCode             = pi_code;
+      PiFirstName        = pi_first_name;
+      PiLastName         = pi_last_name;
+      RcuhPiUid          = uh_pi_uid;
+      Notes              = notes;
+      RCUHProject        = rcuh_proj;
+      Active             = Active;
+      UuidUpl            = uuid_upl;
+      UuidApi            = uuid_api;
+      EndUser            = end_user;
+      Filename           = filename;
+      Zcount             = cnt;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}

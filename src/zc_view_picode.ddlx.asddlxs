@@ -1,0 +1,124 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'View data',
+    typeNamePlural: 'View data'
+  }
+}
+annotate entity ZC_VIEW_PICODE with
+{
+  @UI.facet: [{ id:            'viewData',
+                purpose:       #STANDARD,
+                type:          #IDENTIFICATION_REFERENCE,
+                label:         'View data',
+                position:      10}]
+
+  @UI.lineItem: [ {
+    position: 10 ,
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 10
+  } ]
+  @UI.hidden: true
+  ViewUuid;
+
+  @UI.lineItem: [ {
+  position: 20 ,
+  importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 20
+  } ]
+  @UI.hidden: true
+  UploadUuid;
+
+  @UI.lineItem: [ {
+  position: 30 ,
+  importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.textArrangement: #TEXT_ONLY
+  EndUser;
+
+  @UI.lineItem: [ {
+  position: 40 ,
+  importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 40
+  } ]
+  Cnt;
+
+  //  @UI.lineItem: [ {
+  //  position: 50 ,
+  //  importance: #MEDIUM
+  //  } ]
+  //  @UI.identification: [ {
+  //    position: 50
+  //  } ]
+  //  @UI.hidden: true
+  //  PiUuid;
+
+  @UI.lineItem: [ {
+  position: 60 ,
+  importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 60
+  } ]
+  @EndUserText.label: 'Pi Code'
+  PiCode;
+
+  @UI.lineItem: [ {
+  position: 70 ,
+  importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 70
+  } ]
+  @EndUserText.label: 'First Name'
+  PiFirstName;
+
+  @UI.lineItem: [ {
+  position: 80 ,
+  importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 80
+  } ]
+  @EndUserText.label: 'Last Name'
+  PiLastName;
+
+  @UI.lineItem: [ {
+  position: 90 ,
+  importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 90
+  } ]
+  @EndUserText.label: 'Principal Investigator UH UID'
+  UhPiUid;
+
+  @UI.lineItem: [ {
+  position: 100 ,
+  importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 100
+  } ]
+  @EndUserText.label: 'Notes'
+  Notes;
+
+  @UI.lineItem: [ {
+  position: 110 ,
+  importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 110
+  } ]
+  @EndUserText.label: 'Active'
+  Active;
+}

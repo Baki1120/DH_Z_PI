@@ -1,0 +1,13 @@
+abstract;
+strict ( 2 );
+with hierarchy;
+
+define behavior for ZA_PI_REQ alias PrincipalInvestigatorRequest
+{
+  association _PrincipalInvestigatorList;
+}
+
+define behavior for ZA_PI_DATA alias PrincipalInvestigatorList
+{
+  association _PrincipalInvestigatorRequest;
+}

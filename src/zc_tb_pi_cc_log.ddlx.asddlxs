@@ -1,0 +1,207 @@
+@Metadata.layer: #CORE
+//@UI.headerInfo.title.type: #STANDARD
+//@UI.headerInfo.title.value: 'Uuid'
+//@UI.headerInfo.description.type: #STANDARD
+//@UI.headerInfo.description.value: 'Uuid'
+
+@UI.headerInfo: {
+    typeName: 'View Log',
+    typeNamePlural: 'Log Data',
+    title: {
+        type: #STANDARD,
+        label: 'View Log',
+        value: 'Uuid'
+    },
+    description: {
+        type: #STANDARD,
+        label: 'Log Detail',
+        value: 'Uuid'
+    }
+}
+
+annotate view ZC_TB_PI_CC_LOG with
+{
+  @EndUserText.label: 'Uuid'
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+  @UI.identification: [ {
+    position: 10 ,
+    label: 'UUID'
+  } ]
+  @UI.lineItem: [ {
+    position: 10 ,
+    label: 'Principal Investigator',
+    type: #FOR_INTENT_BASED_NAVIGATION,
+    semanticObject: 'ZPIDATA',
+    semanticObjectAction: 'display'
+  } ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+  @UI.hidden: true
+  Uuid;
+
+  @UI.identification: [ {
+    position: 20 ,
+    label: 'Log type'
+  } ]
+  @UI.lineItem: [ {
+    position: 20 ,
+    label: 'Log type'
+  } ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  @UI.textArrangement: #TEXT_FIRST
+  Type;
+
+  @EndUserText.label: 'PI Code'
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+  PiCode;
+
+  @EndUserText.label: 'First Name'
+  @UI.identification: [ {
+    position: 40
+  } ]
+  @UI.lineItem: [ {
+    position: 40
+  } ]
+  @UI.selectionField: [ {
+    position: 40
+  } ]
+  PiFirstName;
+
+  @EndUserText.label: 'PI Last Name'
+  @UI.identification: [ {
+    position: 50
+  } ]
+  @UI.lineItem: [ {
+    position: 50
+  } ]
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  PiLastName;
+
+  @EndUserText.label: 'Principal Investigator UH UID'
+  @UI.identification: [ {
+    position: 60
+  } ]
+  @UI.lineItem: [ {
+    position: 60
+  } ]
+  @UI.selectionField: [ {
+    position: 60
+  } ]
+  RcuhPiCode;
+
+  @EndUserText.label: 'Notes'
+  @UI.identification: [ {
+    position: 70
+  } ]
+  @UI.lineItem: [ {
+    position: 70
+  } ]
+  @UI.multiLineText: true
+  Notes;
+
+  @UI.identification: [ {
+    position: 80 ,
+    label: 'Active'
+  } ]
+  @UI.lineItem: [ {
+    position: 80 ,
+    label: 'Active'
+  } ]
+  Active;
+
+  @UI.identification: [ {
+    position: 90 ,
+    label: 'Status',
+    criticality: 'Criticality'
+  } ]
+  @UI.lineItem: [ {
+    position: 90 ,
+    label: 'Status',
+    criticality: 'Criticality'
+  } ]
+  @UI.textArrangement: #TEXT_FIRST
+  Status;
+
+  @UI.lineItem: [ {
+    position: 100 ,
+    label: 'Message'
+  } ]
+  @UI.identification: [ {
+    position: 100 ,
+    label: 'Message'
+  } ]
+  Message;
+
+  @UI.identification: [ {
+    position: 110 ,
+    label: 'Created By'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 ,
+    label: 'Created By'
+  } ]
+  CreatedBy;
+
+  @UI.identification: [ {
+    position: 120 ,
+    label: 'Created On'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 ,
+    label: 'Created On'
+  } ]
+  CreatedAt;
+
+  @UI.identification: [ {
+    position: 130 ,
+    label: 'Changed By'
+  } ]
+  @UI.lineItem: [ {
+    position: 130 ,
+    label: 'Changed By'
+  } ]
+  LocalLastChangedBy;
+
+  @UI.identification: [ {
+    position: 140 ,
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 140 ,
+    label: 'Changed On'
+  } ]
+  LocalLastChangedAt;
+
+  @UI.identification: [ {
+    position: 150 ,
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 150 ,
+    label: 'Changed On'
+  } ]
+  @UI.selectionField: [ {
+    position: 150
+  } ]
+  @UI.hidden: true
+  LastChangedAt;
+}

@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Generate the Next PI Code",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Generate the Next PI Code"
+  },
+  "ui5AppDetails": {
+    "appId": "nextpicode"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_97C478C8A0A67D83CB44D8E6AA6F7F14BA28C932_TM",
+    "semanticObject": "ZNEXTPICODE",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_97C478C8A0A67D83CB44D8E6AA6F7F14BA28C932_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Generate the Next PI Code",
+        "subtitle": "PI Code"
+      }
+    }
+  ]
+}

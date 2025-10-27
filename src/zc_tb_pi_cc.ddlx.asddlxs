@@ -1,0 +1,194 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+    typeName: 'Principal Investigator',
+    typeNamePlural: 'Principal Investigator',
+    title: {
+        type: #STANDARD,
+        label: 'Principal Investigator',
+        value: 'Uuid'
+    },
+    description: {
+        type: #STANDARD,
+        label: 'Principal Investigator',
+        value: 'Uuid'
+    }
+}
+annotate view ZC_TB_PI_CC with
+{
+  @EndUserText.label: 'Uuid'
+  @UI.facet: [ {
+    label: 'General Information',
+    id: 'GeneralInfo',
+    purpose: #STANDARD,
+    position: 10 ,
+    type: #IDENTIFICATION_REFERENCE
+  },
+  {
+  id: 'idChangeDocs',
+  type: #LINEITEM_REFERENCE,
+  label: 'Change Documents',
+  position: 20 ,
+  targetElement: '_ChangeDocs'
+  } ]
+
+  @UI.identification: [ {
+    position: 10 ,
+    label: 'UUID'
+  } ]
+  //  @UI.lineItem: [ {
+  //    position: 10 ,
+  //    label: 'View Log',
+  //    type: #FOR_INTENT_BASED_NAVIGATION,
+  //    semanticObject: 'ZPIDATALOG',
+  //    semanticObjectAction: 'display'
+  //  } ]
+  @UI.selectionField: [ {
+    position: 10
+  } ]
+  @UI.hidden: true
+  Uuid;
+
+  @EndUserText.label: 'PI Code'
+  @UI.identification: [ {
+    position: 20
+  } ]
+  @UI.lineItem: [ {
+    position: 20,
+    label: 'Upload Excel',
+    type: #FOR_INTENT_BASED_NAVIGATION,
+    semanticObject: 'ZPIDATAUPL',
+    semanticObjectAction: 'display'
+  } ]
+  @UI.selectionField: [ {
+    position: 20
+  } ]
+  PiCode;
+
+  @EndUserText.label: 'First Name'
+  @UI.identification: [ {
+    position: 30
+  } ]
+  @UI.lineItem: [ {
+    position: 30
+  } ]
+  @UI.selectionField: [ {
+    position: 30
+  } ]
+  PiFirstName;
+
+  @EndUserText.label: 'Last Name'
+  @UI.identification: [ {
+    position: 40
+  } ]
+  @UI.lineItem: [ {
+    position: 40
+  } ]
+  @UI.selectionField: [ {
+    position: 40
+  } ]
+  PiLastName;
+
+  @EndUserText.label: 'UH Principal Investigator UID'
+  @UI.identification: [ {
+    position: 50
+  } ]
+  @UI.lineItem: [ {
+    position: 50
+  } ]
+  @UI.selectionField: [ {
+    position: 50
+  } ]
+  RcuhPiUid;
+
+  @UI.identification: [ {
+    position: 70 ,
+    label: 'Active'
+  } ]
+  @UI.lineItem: [ {
+    position: 70 ,
+    label: 'Active'
+  } ]
+  Active;
+
+  @UI.identification: [ {
+    position: 100 ,
+    label: 'Changed By'
+  } ]
+  @UI.lineItem: [ {
+    position: 100 ,
+    label: 'Changed By'
+  } ]
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.identification: [ {
+    position: 110 ,
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 110 ,
+    label: 'Changed On'
+  } ]
+  @UI.hidden: true
+  LocalLastChangedAt;
+
+  @UI.identification: [ {
+    position: 120 ,
+    label: 'Changed On'
+  } ]
+  @UI.lineItem: [ {
+    position: 120 ,
+    label: 'Changed On'
+  } ]
+  @UI.hidden: true
+  LastChangedAt;
+
+  @EndUserText.label: 'RCUH Project'
+  @UI.identification: [ {
+    position: 130
+  } ]
+  @UI.lineItem: [ {
+    position: 130
+  } ]
+  RCUHProject;
+
+  @EndUserText.label: 'Notes'
+  @UI.identification: [ {
+    position: 140
+  } ]
+  @UI.lineItem: [ {
+    position: 140
+  } ]
+  @UI.multiLineText: true
+  Notes;
+
+  @EndUserText.label: 'Uuid Api'
+  @UI.identification: [ {
+    position: 150
+  } ]
+  @UI.lineItem: [ {
+    position: 150
+  } ]
+  @UI.hidden: true
+  UuidApi;
+
+  @UI.identification: [ {
+    position: 160 ,
+    label: 'Created By'
+  } ]
+  @UI.lineItem: [ {
+    position: 160 ,
+    label: 'Created By'
+  } ]
+  CreatedByUser;
+
+  @UI.identification: [ {
+    position: 170 ,
+    label: 'Created On'
+  } ]
+  @UI.lineItem: [ {
+    position: 170 ,
+    label: 'Created On'
+  } ]
+  CreatedAt;
+}

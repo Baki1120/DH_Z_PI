@@ -1,0 +1,12 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_TB_PI_CC_LOG'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_TB_PI_CC_LOG'
+  }
+}
+define service ZUI_TB_PI_CC_LOG_O4
+  provider contracts odata_v4_ui {
+  expose ZC_TB_PI_CC_LOG as PrincipalInvestigatorLog;
+}

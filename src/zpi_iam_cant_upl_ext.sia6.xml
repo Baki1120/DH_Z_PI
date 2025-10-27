@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_SIA6" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <SIA6>
+    <MAIN_OBJECT>
+     <NAME>ZPI_IAM_CANT_UPL_EXT</NAME>
+     <TYPE>SIA6</TYPE>
+     <DESCRIPTION>Can not upload excel file</DESCRIPTION>
+     <RESPONSIBLE>CB9980000030</RESPONSIBLE>
+     <MASTER_LANGUAGE>EN</MASTER_LANGUAGE>
+     <MASTER_SYSTEM>CPG</MASTER_SYSTEM>
+     <PACKAGE_REF>
+      <PACKAGE_NAME>ZPI</PACKAGE_NAME>
+     </PACKAGE_REF>
+     <ABAP_LANGU_VERSION>5</ABAP_LANGU_VERSION>
+    </MAIN_OBJECT>
+    <APP_ID>ZPI_IAM_CANT_UPL_EXT</APP_ID>
+    <APP_TYPE>EXT</APP_TYPE>
+    <ABAP_LANGUAGE_VERSION>5</ABAP_LANGUAGE_VERSION>
+    <UI_APP_ID>ZPIDATAUPL_UI5R</UI_APP_ID>
+    <SERVICE>
+     <item>
+      <REL_NAME>ZUI_PICODE_UPL_O4</REL_NAME>
+      <REL_TYPE>G4BA</REL_TYPE>
+      <APP_ID>ZPI_IAM_CANT_UPL_EXT</APP_ID>
+      <SRVC_NAME>FF9F116C1413BFA2B47311682FDE43</SRVC_NAME>
+      <SRVC_TYPE>HT</SRVC_TYPE>
+      <UIAD_SRC>ZPIDATAUPL_UI5R</UIAD_SRC>
+      <TEXT>Service binding for Pi Code</TEXT>
+      <TYPE_TEXT>OData V4</TYPE_TEXT>
+     </item>
+    </SERVICE>
+    <AUTH>
+     <item>
+      <AUTH_OBJECT>Z_OBJ_ACT</AUTH_OBJECT>
+      <STATUS>U</STATUS>
+      <TEXT>Authorizatio Object</TEXT>
+      <AUTH_ITEM>
+       <item>
+        <UUID>NxeqzAesHt+e6l0Uny391w==</UUID>
+        <AUTH_OBJECT>Z_OBJ_ACT</AUTH_OBJECT>
+        <AUTH_OBJECT_INSTANCE>0001</AUTH_OBJECT_INSTANCE>
+        <TEXT>Authorizatio Object</TEXT>
+        <STATUS>U</STATUS>
+        <VALUES>
+         <item>
+          <FIELD>ACTVT</FIELD>
+          <VALUE>Display</VALUE>
+          <VALUES>
+           <item>
+            <UUID>NxeqzAesHt+e6l0Uny4d1w==</UUID>
+            <LOW_VALUE>03</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>Activity</TEXT>
+          <STATUS>U</STATUS>
+          <IS_ACTVT>X</IS_ACTVT>
+         </item>
+         <item>
+          <FIELD>ZACTION</FIELD>
+          <VALUES>
+           <item>
+            <UUID>NxeqzAesHt+e6l0Uny5d1w==</UUID>
+           </item>
+          </VALUES>
+          <TEXT>Action</TEXT>
+          <STATUS>U</STATUS>
+         </item>
+         <item>
+          <FIELD>ZAPPID</FIELD>
+          <VALUE>ZPIDATAUPL</VALUE>
+          <VALUES>
+           <item>
+            <UUID>NxeqzAesHt+e6l0Uny491w==</UUID>
+            <LOW_VALUE>ZPIDATAUPL</LOW_VALUE>
+           </item>
+          </VALUES>
+          <TEXT>App ID</TEXT>
+          <STATUS>U</STATUS>
+         </item>
+        </VALUES>
+       </item>
+      </AUTH_ITEM>
+     </item>
+    </AUTH>
+    <PUBLISH_STATUS>p</PUBLISH_STATUS>
+   </SIA6>
+  </asx:values>
+ </asx:abap>
+</abapGit>

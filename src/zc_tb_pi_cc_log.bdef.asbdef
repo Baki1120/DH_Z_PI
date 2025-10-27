@@ -1,0 +1,14 @@
+projection implementation in class ZCL_C_TB_PI_CC_LOG unique;
+strict ( 2 );
+use draft;
+define behavior for ZC_TB_PI_CC_LOG alias PrincipalInvestigatorLog
+use etag
+
+{
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+}

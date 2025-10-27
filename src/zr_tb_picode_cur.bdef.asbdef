@@ -1,0 +1,43 @@
+managed implementation in class ZCL_R_TB_PICODE_CUR unique;
+strict ( 2 );
+with draft;
+define behavior for ZR_TB_PICODE_CUR alias PiCodesCurrently
+persistent table ztb_picode_cur
+draft table ztb_picode_cur_d
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+
+{
+
+  field ( readonly )
+  PiCode,
+  Code,
+  CreatedBy,
+  CreatedAt,
+  LocalLastChangedBy,
+  LocalLastChangedAt,
+  LastChangedAt;
+
+  determination genPiCode on modify { field PiCode; }
+
+  update;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action ( features : instance ) Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ztb_picode_cur
+    {
+      Code               = code;
+      PiCode             = pi_code;
+      NextCode           = next_code;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}

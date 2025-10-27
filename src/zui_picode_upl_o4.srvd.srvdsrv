@@ -1,0 +1,8 @@
+@EndUserText.label: 'Service definition for Pi COde'
+@ObjectModel: {leadingEntity: {name: 'ZC_PICODE_UPL'}}
+define service ZUI_PICODE_UPL_O4
+  provider contracts odata_v4_ui {
+  expose ZC_PICODE_UPL  as File;
+  expose ZC_DATA_PICODE as dataFile;
+  expose ZC_VIEW_PICODE as previewData;
+}

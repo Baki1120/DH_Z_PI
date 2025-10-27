@@ -1,0 +1,212 @@
+managed implementation in class zcl_r_picode_upl unique;
+strict ( 2 );
+with draft;
+
+define own authorization context
+{
+  'Z_OBJ_ACT';
+}
+
+define behavior for ZR_PICODE_UPL alias File
+
+persistent table ztb_picode_upl
+draft table ztb_picode_upld
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master ( global )
+early numbering
+{
+  field ( readonly )
+  UUID,
+  EndUser,
+  ZCount,
+  Status,
+  CreatedAt,
+  CreatedBy,
+  LastChangedAt,
+  LocalLastChangedAt,
+  LocalLastChangedBy;
+
+  field ( features : instance ) Filename;
+  create;
+  update ( features : instance );
+  delete ( features : instance );
+  association _dataFile { create; with draft; }
+  association _previewData { create; with draft; }
+  association _picodeCurrent { create; with draft; }
+
+  determination getExcelData on save { field Filename; }
+  determination setStatusToOpen on modify { create; }
+  validation validateConnection on save { field Filename; }
+  validation checkgenPiCode on save { field Filename; }
+
+  determine action trigger_my_logic
+  {
+    validation validateConnection;
+    determination getExcelData;
+    validation checkgenPiCode;
+
+  }
+
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare
+  {
+    validation validateConnection;
+    validation checkgenPiCode;
+  }
+
+
+  mapping for ztb_picode_upl corresponding
+    {
+      UUID               = uuid;
+      EndUser            = end_user;
+      ZCount             = cnt;
+      Status             = status;
+      Attachment         = attachment;
+      Mimetype           = mimetype;
+      Filename           = filename;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+
+}
+
+
+define behavior for ZI_DATA_PICODE alias dataFile
+implementation in class ZCL_DATA_PICODE unique
+persistent table ztb_pi_cc
+draft table ztb_pi_cccd
+etag master LocalLastChangedAt
+lock dependent by _File
+authorization dependent by _File
+with additional save
+
+{
+
+  association _File { with draft; }
+  field ( readonly ) EndUser, PiCode, ZCount, UplUuid,
+  CreatedAt,
+  CreatedBy,
+  LastChangedAt,
+  LocalLastChangedAt,
+  LocalLastChangedBy;
+  field ( numbering : managed, readonly ) Uuid;
+  validation checkData on save { create; field PiFirstName, PiLastName, UhPiUid; }
+
+  update;
+  delete;
+
+  mapping for ztb_pi_cc corresponding
+    {
+      Uuid               = uuid;
+      PiCode             = pi_code;
+      PiFirstName        = pi_first_name;
+      PiLastName         = pi_last_name;
+      UhPiUid            = uh_pi_uid;
+      Notes              = notes;
+      active             = Active;
+      UplUuid            = uuid_upl;
+      EndUser            = end_user;
+      Filename           = filename;
+      Zcount             = cnt;
+      Zindex             = zindex;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}
+
+define behavior for ZI_VIEW_PICODE alias previewData
+implementation in class ZCL_VIEW_PICODE unique
+persistent table ztb_view_picode
+draft table ztb_view_picoded
+etag master LocalLastChangedAt
+lock dependent by _File
+authorization dependent by _File
+
+{
+
+  association _File { with draft; }
+  field ( readonly ) UploadUuid, EndUser, Cnt, PiCode, CreatedAt,
+  CreatedBy,
+  LastChangedAt,
+  LocalLastChangedAt,
+  LocalLastChangedBy;
+
+  field ( numbering : managed, readonly ) ViewUuid;
+
+  update;
+  delete;
+
+  mapping for ztb_view_picode corresponding
+    {
+      ViewUuid           = view_uuid;
+      UploadUuid         = upload_uuid;
+      EndUser            = end_user;
+      Cnt                = cnt;
+      PiCode             = pi_code;
+      PiFirstName        = pi_first_name;
+      PiLastName         = pi_last_name;
+      UhPiUid            = uh_pi_uid;
+      Notes              = notes;
+      Active             = active;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}
+
+
+define behavior for ZI_PICODE_CURR alias picodeCurr
+implementation in class ZCL_PICODE_CURR unique
+persistent table ztb_picode_cur
+draft table ztb_picode_curdd
+etag master LocalLastChangedAt
+lock dependent by _File
+authorization dependent by _File
+
+{
+
+  association _File { with draft; }
+  field ( readonly ) Code,
+  PiCode,
+  NextCode,
+  UuidUpl,
+  EndUser,
+  Filename,
+  Cnt,
+  CreatedAt,
+  CreatedBy,
+  LastChangedAt,
+  LocalLastChangedAt,
+  LocalLastChangedBy;
+
+  update;
+  delete;
+
+  mapping for ztb_picode_cur corresponding
+    {
+      Code               = code;
+      PiCode             = pi_code;
+      NextCode           = next_code;
+      UuidUpl            = uuid_upl;
+      Filename           = filename;
+      EndUser            = end_user;
+      Cnt                = cnt;
+      CreatedBy          = created_by;
+      CreatedAt          = created_at;
+      LocalLastChangedBy = local_last_changed_by;
+      LocalLastChangedAt = local_last_changed_at;
+      LastChangedAt      = last_changed_at;
+    }
+}

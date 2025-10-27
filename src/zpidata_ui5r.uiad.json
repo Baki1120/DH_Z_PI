@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "RCUH Principal Investigator App",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "RCUH Principal Investigator App"
+  },
+  "ui5AppDetails": {
+    "appId": "principalinvestigator"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_C86E40E260ACB7C9FA663FC788D68D8935B8D136_TM",
+    "semanticObject": "ZPIDATA",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_C86E40E260ACB7C9FA663FC788D68D8935B8D136_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "RCUH Principal Investigator App",
+        "subtitle": "View and manage Principal Investigator records"
+      }
+    }
+  ]
+}

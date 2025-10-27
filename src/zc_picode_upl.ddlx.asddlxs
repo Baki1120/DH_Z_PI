@@ -1,0 +1,103 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Upload Pi Code',
+    typeNamePlural: 'Upload Pi Code'
+  }
+}
+annotate entity ZC_PICODE_UPL with
+{
+  @UI.facet: [{ id:            'File',
+                 purpose:       #STANDARD,
+                 type:          #IDENTIFICATION_REFERENCE,
+                 label:         'File',
+                 position:      10 },
+               { id:            'viewData',
+                 purpose:       #STANDARD,
+                 type:          #LINEITEM_REFERENCE,
+                 label:         'View data',
+                 position:      20,
+                 targetElement: '_previewData'}]
+
+  @UI.hidden: true
+  Uuid;
+
+  @UI.lineItem: [ {
+    position: 10 ,
+    importance: #MEDIUM,
+    type: #FOR_INTENT_BASED_NAVIGATION, semanticObject: 'ZPIDATA', semanticObjectAction: 'display',
+    label: 'Principal Investigator'
+  } ]
+  @UI.identification: [ {
+    position: 10
+  } ]
+
+  @EndUserText.label: 'User'
+  @UI.textArrangement: #TEXT_ONLY
+  EndUser;
+
+  @UI.lineItem: [ {
+    position: 20 ,
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 20
+  } ]
+  @UI.selectionField: [{
+      position: 20
+  }]
+  @EndUserText.label: 'Count'
+  ZCount;
+
+  @UI.lineItem: [ {
+    position: 30 ,
+    importance: #MEDIUM,
+    label: 'Status'
+  } ]
+  @UI.identification: [ {
+    position: 30 ,
+    label: 'Status'
+  } ]
+  @UI.textArrangement: #TEXT_FIRST
+  @EndUserText.label: 'Status'
+  Status;
+
+  @UI.lineItem: [ {
+    position: 40 ,
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 40
+  } ]
+  Attachment;
+
+  @UI.lineItem: [ {
+    position: 50 ,
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 50
+  } ]
+  @UI.hidden: true
+  Mimetype;
+
+  @UI.lineItem: [ {
+    position: 60 ,
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 60
+  } ]
+  Filename;
+
+  @UI.lineItem: [ {
+    position: 70 ,
+    importance: #MEDIUM
+  } ]
+  @UI.identification: [ {
+    position: 70
+  } ]
+  @EndUserText.label: 'Last change At'
+  LocalLastChangedAt;
+
+}
